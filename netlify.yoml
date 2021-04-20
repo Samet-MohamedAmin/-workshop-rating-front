@@ -1,0 +1,3 @@
+[build]
+  publish = "dist/rating"
+  command = "npm run build"
