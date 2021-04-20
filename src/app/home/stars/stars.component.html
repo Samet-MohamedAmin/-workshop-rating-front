@@ -1,0 +1,22 @@
+
+<ion-card>
+  <img src="assets/images/rating-meter.png"/>
+  <ion-card-header>
+    <ion-card-title>Rate the presentation</ion-card-title>
+  </ion-card-header>
+  
+  <ion-card-content style="padding-bottom:80px">
+    <div style="position: absolute;left: 50%;transform: translateX(-50%);">
+      <ion-icon
+        *ngFor="let star of stars; let i = index;"
+        class="star"
+        (mouseover)="this.onHover(i+1)"
+        (click)="this.onClick()"
+        name="{{star}}"></ion-icon>
+      <p>rating = {{rating}}</p>
+    </div>
+  </ion-card-content>
+  <ion-item>
+    <ion-button fill="outline" slot="end" [routerLink]="['/', 'rating', 'average']">Result</ion-button>
+  </ion-item>
+</ion-card>

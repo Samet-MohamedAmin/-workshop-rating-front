@@ -1,0 +1,7 @@
+{
+  "name": "rating",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
