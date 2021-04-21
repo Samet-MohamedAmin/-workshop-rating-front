@@ -9,12 +9,14 @@ import { RatingService } from 'src/app/services/rating.service';
 })
 export class AverageComponent implements OnInit {
 
-  average: number
+  average: number = 0
+  remark: string = ""
 
   constructor(public backendService: BackendService) { }
 
   ngOnInit() {
     this.backendService.getRatingsAverage().subscribe((x: {average: number}) => this.average = x.average)
+    this.remark = this.getRemark()
   }
 
   getRemark():string {

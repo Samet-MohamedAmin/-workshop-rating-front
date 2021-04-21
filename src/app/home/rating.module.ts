@@ -8,6 +8,7 @@ import { RatingPageRoutingModule } from './rating-routing.module';
 import { StarsComponent } from './stars/stars.component';
 import { AverageComponent } from './average/average.component';
 import { ProgressBarComponent } from './average/progress-bar/progress-bar.component';
+import { RatingService } from '../services/rating.service';
 
 
 @NgModule({
@@ -23,5 +24,8 @@ import { ProgressBarComponent } from './average/progress-bar/progress-bar.compon
     IonicModule,
     RatingPageRoutingModule
   ],
+  providers:[
+    RatingService
+  ]
 })
 export class RatingPageModule {}

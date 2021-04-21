@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  BACKEND_URL: "http://localhost:8080"
+  // BACKEND_URL: "http://localhost:8080"
+  BACKEND_URL: "https://exatech-nginx-demo.herokuapp.com"
 };
 
 /*
