@@ -10,8 +10,8 @@ import { RatingService } from 'src/app/services/rating.service';
 })
 export class StarsComponent implements OnInit {
 
-  rating: number
-  starCount: number
+  rating: number = 0
+  starCount: number = 5
   ratingLocalStorageKey = "rating"
   starType = {
     outline: "star-outline",
@@ -25,8 +25,7 @@ export class StarsComponent implements OnInit {
   ngOnInit() {
     this.rating = parseInt(localStorage.getItem(this.ratingLocalStorageKey)) || 1
     this.starCount = RatingService.MAX_ITEMS;
-    this.stars.push(this.starType.filled)
-    for (let i = 1; i < this.starCount; i++) {
+    for (let i = 0; i < this.starCount; i++) {
       this.stars.push(this.starType.outline);
     }
   }
