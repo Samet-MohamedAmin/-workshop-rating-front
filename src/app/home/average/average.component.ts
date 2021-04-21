@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { BackendService } from 'src/app/services/backend.service';
 import { RatingService } from 'src/app/services/rating.service';
 
@@ -10,19 +10,24 @@ import { RatingService } from 'src/app/services/rating.service';
 export class AverageComponent implements OnInit {
 
   average: number = 0
-  remark: string = ""
 
   constructor(public backendService: BackendService) { }
 
   ngOnInit() {
     this.backendService.getRatingsAverage().subscribe((x: {average: number}) => this.average = x.average)
-    this.remark = this.getRemark()
   }
 
   getRemark():string {
-    const index: number = Math.floor(this.average)
-    const remark: string = RatingService.legend[index].remark
-    return remark
+    let index: number = Math.floor(this.average)
+    if (index == 5) {
+      index--
+    }
+    if(RatingService && RatingService.legend && RatingService.legend[index]) {
+      const remark: string = RatingService.legend[index].remark
+      return remark
+    } else {
+      return "Poor"
+    }
   }
 
 }
