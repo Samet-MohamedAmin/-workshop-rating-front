@@ -21,7 +21,7 @@ export class ProgressBarComponent implements OnInit, OnChanges {
   }
 
   getColor():string {
-    let index: number = Math.floor(this.progress)
+    let index: number = Math.ceil(this.progress-0.5)
     if (index == 5) {
       index--
     }
