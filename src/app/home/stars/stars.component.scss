@@ -1,10 +1,30 @@
+.stars-container{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  --star-width: 50px;
+  --star-padding: 5px;
+  min-width: calc((var(--star-width) + var(--star-padding)) * 5);
+
   .star {
-    width: 50px;
-    height: 50px;
+    width: var(--star-width);
+    height: var(--star-width);
     color: goldenrod;
-    padding-left:5px;
-  }
+    padding-left: var(--star-padding);
+
+    &:first-child {
+      position:absolute;
+      left: -2%;
+      color: transparent;
+      width: 25px;
+      z-index: 100;
+    }
   
-  .star:hover {
-    cursor: pointer
+    &:hover {
+      cursor: pointer
+    }
   }
+
+
+  
+}
