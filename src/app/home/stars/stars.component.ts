@@ -30,17 +30,18 @@ export class StarsComponent implements OnInit {
     }
   }
 
-  updateStars(value: number){
-    for (let i = 0; i < value; i++) {
-      this.stars[i] = this.starType.filled
+  getStars(){
+    let stars = []
+    for (let i = 0; i < this.rating; i++) {
+      stars[i] = this.starType.filled
     }
-    for (let i = value; i < this.starCount; i++) {
-      this.stars[i] = this.starType.outline
+    for (let i = this.rating; i < this.starCount; i++) {
+      stars[i] = this.starType.outline
     }
+    return stars
   }
 
   onHover(value: number) {
-    this.updateStars(value)
     this.rating = value
   }
 

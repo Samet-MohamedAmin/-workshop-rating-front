@@ -13,7 +13,7 @@
         (click)="this.onClick()"
         name="star-outline"></ion-icon>
       <ion-icon
-        *ngFor="let star of stars; let i = index;"
+        *ngFor="let star of getStars(); let i = index;"
         class="star"
         (mouseover)="this.onHover(i+1)"
         (click)="this.onClick()"
